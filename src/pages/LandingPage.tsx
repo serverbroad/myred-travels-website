@@ -92,6 +92,37 @@ const GooglePlayBadge = () => (
   </a>
 );
 
+const paymentMethods = [
+  { name: 'Visa', url: 'https://myredtravels.com/assets/visa-logo.png' },
+  { name: 'Mastercard', url: 'https://myredtravels.com/assets/mastercard-logo.png' },
+  { name: 'American Express', url: 'https://myredtravels.com/assets/amex-logo.png' },
+  { name: 'Discover', url: 'https://myredtravels.com/assets/discover-logo.png' },
+  { name: 'Wave', url: 'https://www.wave.com/img/nav-logo.png' },
+  { name: 'Mobile Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEDm-vyo9R0kkeG9VqEEOcSyLrVIn8gEZurd7tTQV2JmU4817z69nadgs&s=10' },
+  { name: 'Payment Method 1', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg' },
+  { name: 'Payment Method 2', url: 'https://play-lh.googleusercontent.com/COFlFnBiED3WHi-J8CRd6ehKOzBjvgKGySJasSaOm1OrMZbsn0NVzk3uL4PpzGo7mF91EBaOvbsqRL9ImD_-7A' },
+];
+
+const PaymentMethods = ({ title }: { title: string }) => (
+  <div className="mt-6">
+    <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/50">{title}</h4>
+    <div className="flex flex-wrap items-center gap-3">
+      {paymentMethods.map((method) => (
+        <div
+          key={method.name}
+          className="flex h-10 items-center justify-center rounded-lg bg-white px-3 py-1.5 shadow-sm"
+        >
+          <img
+            src={method.url}
+            alt={method.name}
+            className="h-6 w-auto max-w-[4rem] object-contain"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const ServiceCard = ({ icon: Icon, title, description }: { icon: typeof Plane; title: string; description: string }) => (
   <Card className="group h-full border border-mist bg-gradient-card shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-0.5">
     <CardContent className="p-6">
@@ -244,6 +275,7 @@ const content = {
     phoneInternational: { fr: 'International', en: 'International' },
     whatsapp: { fr: 'WhatsApp', en: 'WhatsApp' },
     email: { fr: 'Email', en: 'Email' },
+    paymentMethods: { fr: 'Moyens de paiement', en: 'Payment Methods' },
   },
 };
 
@@ -496,6 +528,7 @@ export default function LandingPage() {
                 <AppStoreBadge />
                 <GooglePlayBadge />
               </div>
+              <PaymentMethods title={t(content.footer.paymentMethods)} />
             </div>
             <div>
               <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/50">{t(content.footer.services)}</h4>
