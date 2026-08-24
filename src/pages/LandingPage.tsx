@@ -98,7 +98,7 @@ const paymentMethods = [
   { name: 'American Express', url: 'https://myredtravels.com/assets/amex-logo.png' },
   { name: 'Discover', url: 'https://myredtravels.com/assets/discover-logo.png' },
   { name: 'Wave', url: 'https://media.licdn.com/dms/image/v2/D4E0BAQFT-JB9_kh57g/company-logo_200_200/company-logo_200_200/0/1729170561809/wave_civ_logo?e=2147483647&v=beta&t=pl4DunKBi90HH1CHeMTtJIzr4ASJ7OcwKiwGDawS_Go', label: 'Visacard' },
-  { name: 'Orange Money', url: 'https://dgpe.gouv.ci/fr/wp-content/uploads/2022/12/orange1.jpg', label: 'Visacard' },
+  { name: 'Orange Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIrOyxcSvH14VQfkZV6Q8-w9ix-GrCNZOfjwj46sGwIgKLzkqNnt812a1t&s=10', label: 'Visacard' },
   { name: 'MTN Mobile Money', url: 'https://www.mtn.ci/wp-content/uploads/2023/05/MTN-CI.jpg', label: 'MasterCard' },
   { name: 'Djamo', url: 'https://play-lh.googleusercontent.com/COFlFnBiED3WHi-J8CRd6ehKOzBjvgKGySJasSaOm1OrMZbsn0NVzk3uL4PpzGo7mF91EBaOvbsqRL9ImD_-7A' },
 ];
@@ -110,15 +110,17 @@ const PaymentMethods = ({ title }: { title: string }) => (
       {paymentMethods.map((method) => (
         <div
           key={method.name}
-          className="flex flex-col items-center gap-1.5 rounded-lg bg-white px-3 py-2 shadow-sm"
+          className="flex h-20 w-20 flex-col items-center justify-center gap-1.5 rounded-xl bg-white p-2 shadow-sm"
         >
-          <img
-            src={method.url}
-            alt={method.name}
-            className="h-6 w-auto max-w-[4rem] object-contain"
-          />
+          <div className="flex h-10 w-full items-center justify-center">
+            <img
+              src={method.url}
+              alt={method.name}
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
           {method.label && (
-            <span className="text-[10px] font-extrabold uppercase tracking-wide text-ink">
+            <span className="text-[9px] font-extrabold uppercase tracking-wide text-ink">
               {method.label}
             </span>
           )}
