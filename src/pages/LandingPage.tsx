@@ -97,10 +97,9 @@ const paymentMethods = [
   { name: 'Mastercard', url: 'https://myredtravels.com/assets/mastercard-logo.png' },
   { name: 'American Express', url: 'https://myredtravels.com/assets/amex-logo.png' },
   { name: 'Discover', url: 'https://myredtravels.com/assets/discover-logo.png' },
-  { name: 'Wave', url: 'https://www.wave.com/img/nav-logo.png' },
-  { name: 'Mobile Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEDm-vyo9R0kkeG9VqEEOcSyLrVIn8gEZurd7tTQV2JmU4817z69nadgs&s=10' },
-  { name: 'Payment Method 1', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg' },
-  { name: 'Payment Method 2', url: 'https://play-lh.googleusercontent.com/COFlFnBiED3WHi-J8CRd6ehKOzBjvgKGySJasSaOm1OrMZbsn0NVzk3uL4PpzGo7mF91EBaOvbsqRL9ImD_-7A' },
+  { name: 'Wave', url: 'https://www.wave.com/img/nav-logo.png', label: 'Visacard' },
+  { name: 'Orange Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEDm-vyo9R0kkeG9VqEEOcSyLrVIn8gEZurd7tTQV2JmU4817z69nadgs&s=10', label: 'Visacard' },
+  { name: 'MTN Mobile Money', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg', label: 'Master' },
 ];
 
 const PaymentMethods = ({ title }: { title: string }) => (
@@ -110,13 +109,18 @@ const PaymentMethods = ({ title }: { title: string }) => (
       {paymentMethods.map((method) => (
         <div
           key={method.name}
-          className="flex h-10 items-center justify-center rounded-lg bg-white px-3 py-1.5 shadow-sm"
+          className="relative flex h-10 items-center justify-center overflow-hidden rounded-lg bg-white px-3 py-1.5 shadow-sm"
         >
           <img
             src={method.url}
             alt={method.name}
             className="h-6 w-auto max-w-[4rem] object-contain"
           />
+          {method.label && (
+            <span className="absolute inset-0 flex items-center justify-center bg-white/90 text-[10px] font-extrabold uppercase tracking-wide text-ink">
+              {method.label}
+            </span>
+          )}
         </div>
       ))}
     </div>
@@ -565,8 +569,8 @@ export default function LandingPage() {
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
             <p className="text-xs text-white/50">© {new Date().getFullYear()} MyRed Travels. {t(content.footer.rights)}</p>
             <div className="flex gap-6 text-xs text-white/50">
-              <a href="https://myredtravels.com/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="hover:text-white">{t(content.footer.privacy)}</a>
-              <a href="https://myredtravels.com/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="hover:text-white">{t(content.footer.terms)}</a>
+              <a href="/privacy-policy" className="hover:text-white">{t(content.footer.privacy)}</a>
+              <a href="/terms-conditions" className="hover:text-white">{t(content.footer.terms)}</a>
             </div>
           </div>
         </div>

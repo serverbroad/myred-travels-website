@@ -1,4 +1,6 @@
 import LandingPage from './pages/LandingPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import type { ReactNode } from 'react';
 
 export interface RouteConfig {
@@ -16,5 +18,17 @@ export const routes: RouteConfig[] = [
     path: '/',
     element: <LandingPage />,
     public: true,
-  }
+  },
+  {
+    name: 'Privacy Policy',
+    path: '/privacy-policy',
+    element: <PrivacyPolicy />,
+    public: true,
+  },
+  {
+    name: 'Terms of Service',
+    path: '/terms-conditions',
+    element: <TermsOfService />,
+    public: true,
+  },
 ];
