@@ -99,17 +99,17 @@ const paymentMethods = [
   { name: 'Discover', url: 'https://myredtravels.com/assets/discover-logo.png' },
   { name: 'Wave', url: 'https://www.wave.com/img/nav-logo.png', label: 'Visacard' },
   { name: 'Orange Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEDm-vyo9R0kkeG9VqEEOcSyLrVIn8gEZurd7tTQV2JmU4817z69nadgs&s=10', label: 'Visacard' },
-  { name: 'MTN Mobile Money', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg', label: 'Master' },
+  { name: 'MTN Mobile Money', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg', label: 'MasterCard' },
 ];
 
 const PaymentMethods = ({ title }: { title: string }) => (
   <div className="mt-6">
     <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/50">{title}</h4>
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-start gap-3">
       {paymentMethods.map((method) => (
         <div
           key={method.name}
-          className="relative flex h-10 items-center justify-center overflow-hidden rounded-lg bg-white px-3 py-1.5 shadow-sm"
+          className="flex flex-col items-center gap-1.5 rounded-lg bg-white px-3 py-2 shadow-sm"
         >
           <img
             src={method.url}
@@ -117,7 +117,7 @@ const PaymentMethods = ({ title }: { title: string }) => (
             className="h-6 w-auto max-w-[4rem] object-contain"
           />
           {method.label && (
-            <span className="absolute inset-0 flex items-center justify-center bg-white/90 text-[10px] font-extrabold uppercase tracking-wide text-ink">
+            <span className="text-[10px] font-extrabold uppercase tracking-wide text-ink">
               {method.label}
             </span>
           )}
