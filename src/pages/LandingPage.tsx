@@ -97,9 +97,10 @@ const paymentMethods = [
   { name: 'Mastercard', url: 'https://myredtravels.com/assets/mastercard-logo.png' },
   { name: 'American Express', url: 'https://myredtravels.com/assets/amex-logo.png' },
   { name: 'Discover', url: 'https://myredtravels.com/assets/discover-logo.png' },
-  { name: 'Wave', url: 'https://www.wave.com/img/nav-logo.png', label: 'Visacard' },
-  { name: 'Orange Money', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEDm-vyo9R0kkeG9VqEEOcSyLrVIn8gEZurd7tTQV2JmU4817z69nadgs&s=10', label: 'Visacard' },
-  { name: 'MTN Mobile Money', url: 'https://play-lh.googleusercontent.com/ChvlqPzMvDdm05_dXKHbCNF9dD_g52O8YV7K17iEImhGlVG3C8qlziUMns2cjeCNgZuiFtctZ5YUa__YAFFnsGg', label: 'MasterCard' },
+  { name: 'Wave', url: 'https://media.licdn.com/dms/image/v2/D4E0BAQFT-JB9_kh57g/company-logo_200_200/company-logo_200_200/0/1729170561809/wave_civ_logo?e=2147483647&v=beta&t=pl4DunKBi90HH1CHeMTtJIzr4ASJ7OcwKiwGDawS_Go', label: 'Visacard' },
+  { name: 'Orange Money', url: 'https://dgpe.gouv.ci/fr/wp-content/uploads/2022/12/orange1.jpg', label: 'Visacard' },
+  { name: 'MTN Mobile Money', url: 'https://www.mtn.ci/wp-content/uploads/2023/05/MTN-CI.jpg', label: 'MasterCard' },
+  { name: 'Djamo', url: 'https://play-lh.googleusercontent.com/COFlFnBiED3WHi-J8CRd6ehKOzBjvgKGySJasSaOm1OrMZbsn0NVzk3uL4PpzGo7mF91EBaOvbsqRL9ImD_-7A' },
 ];
 
 const PaymentMethods = ({ title }: { title: string }) => (
