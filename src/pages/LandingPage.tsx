@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 
 const LOGO_URL = 'https://miaoda-conversation-file.s3cdn.medo.dev/user-d3irbo6242kg/app-dxkz3ebw9eyp/20260824/Exe_Logo_My_Red_Travels.png';
+const APP_STORE_URL = 'https://apps.apple.com/us/app/myred-travel/id6803848717';
 
 const useInView = (options?: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -59,7 +60,7 @@ const Section = ({ children, className = '' }: { children: React.ReactNode; clas
 
 const AppStoreBadge = () => (
   <a
-    href="https://apps.apple.com"
+    href={APP_STORE_URL}
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center rounded-lg bg-black px-4 py-2 text-white hover:opacity-90 transition-opacity"
@@ -282,7 +283,7 @@ const Hero = () => {
               <GooglePlayBadge />
             </div>
             <div className="hidden flex-col gap-3 sm:flex-row md:flex">
-              <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="rounded-full bg-white px-8 text-coral hover:bg-white/90 text-base font-semibold">
                   {t(content.hero.download)}
                 </Button>
